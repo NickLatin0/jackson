@@ -262,8 +262,8 @@ export const extractOIDCUserProfile = async (tokenSet: TokenSet, oidcClient: Cli
   profile.claims.roles = idTokenClaims.roles ?? (userinfo.roles as any);
   profile.claims.groups = idTokenClaims.groups ?? (userinfo.groups as any);
   profile.claims.raw = userinfo;
-  profile.claims.city = idTokenClaims.city ?? userinfo.city;
-  profile.claims.address = idTokenClaims.address ?? userinfo.address;
+  profile.claims.city = idTokenClaims.city ?? (userinfo.city as any);
+  profile.claims.address = idTokenClaims.address ?? (userinfo.address as any);
 
   return profile;
 };
