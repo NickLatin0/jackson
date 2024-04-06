@@ -326,6 +326,8 @@ export interface Profile {
   email: string;
   firstName: string;
   lastName: string;
+  city: string;
+  address: string;
   roles?: string[];
   groups?: string[];
   requested: Record<string, string>;

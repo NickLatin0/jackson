@@ -65,6 +65,8 @@ export default NextAuth({
             id: userInfo.id,
             email: userInfo.email,
             name: [userInfo.firstName, userInfo.lastName].filter(Boolean).join(' '),
+            city: userInfo.city,
+            address: userInfo.address,
             image: null,
           };
         }
