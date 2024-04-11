@@ -45,10 +45,6 @@ function validateParsedMetadata(metadata: SAMLSSORecord['idpMetadata']) {
   if (!metadata.entityID) {
     throw new JacksonError("Couldn't parse EntityID from SAML metadata", 400);
   }
-
-  if (!metadata.sso.redirectUrl && !metadata.sso.postUrl) {
-    throw new JacksonError("Couldn't find SAML bindings for POST/REDIRECT", 400);
-  }
 }
 
 function validateMetadataURL(metadataUrl: string) {
