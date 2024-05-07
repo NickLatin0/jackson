@@ -574,7 +574,7 @@ export class OAuthController implements IOAuthController {
     try {
       isIdPFlow = !RelayState.startsWith(relayStatePrefix);
       rawResponse = Buffer.from(SAMLResponse, 'base64').toString();
-      issuer = saml.parseIssuer(rawResponse);
+      issuer = saml.parseIssuer(rawResponse)?.replace(/[\n\t\r]/g, '');
 
       if (!this.opts.idpEnabled && isIdPFlow) {
         // IdP login is disabled so block the request
@@ -590,6 +590,8 @@ export class OAuthController implements IOAuthController {
         throw new JacksonError('Issuer not found.', 403);
       }
 
+      const test = (await this.connectionStore.getAll()).data;
+      console.log(test);
       const connections: SAMLSSORecord[] = (
         await this.connectionStore.getByIndex({
           name: IndexNames.EntityID,
