@@ -1,0 +1,32 @@
+<userInfo>
+	<email>
+		test@ncr.com
+	</email>
+	<FullName>
+		John Doe
+	</FullName>
+	<ssn>
+		123-45-6789
+	</ssn>
+	<address1>
+		123 main street
+	</address1>
+	<address2>
+		apt 123
+	</address2>
+	<city>
+		Athens
+	</city>
+	<state>
+		GA
+	</state>
+	<zip>
+		30307
+	</zip>
+	<phone>
+		123-456-7890
+	</phone>
+	<dob>
+		01/01/2000
+	</dob>
+</userInfo>
