@@ -34,7 +34,10 @@ if (process.env.DB_SSL === 'true') {
 }
 
 const url =
-  process.env.DB_URL || process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/postgres';
+  process.env.DB_URL ||
+  process.env.DATABASE_CONNECTION_POOL ||
+  process.env.DATABASE_URL ||
+  'postgresql://postgres:postgres@localhost:5432/postgres';
 
 let AppDataSource: DataSource;
 
@@ -65,6 +68,7 @@ if (type === 'mssql') {
   AppDataSource = new DataSource(<DataSourceOptions>{
     url:
       process.env.DB_URL ||
+      process.env.DATABASE_CONNECTION_POOL ||
       process.env.DATABASE_URL ||
       'postgresql://postgres:postgres@localhost:5432/postgres',
     ssl,

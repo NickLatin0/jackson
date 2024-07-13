@@ -37,7 +37,7 @@ export const setupLinkExpiryDays = process.env.SETUP_LINK_EXPIRY_DAYS
 
 const db: DatabaseOption = {
   engine: process.env.DB_ENGINE ? <DatabaseEngine>process.env.DB_ENGINE : undefined,
-  url: process.env.DB_URL || process.env.DATABASE_URL,
+  url: process.env.DB_URL || process.env.DATABASE_CONNECTION_POOL || process.env.DATABASE_URL,
   type: process.env.DB_TYPE ? <DatabaseType>process.env.DB_TYPE : undefined,
   ttl: process.env.DB_TTL ? Number(process.env.DB_TTL) : undefined,
   cleanupLimit: process.env.DB_CLEANUP_LIMIT ? Number(process.env.DB_CLEANUP_LIMIT) : undefined,
