@@ -29,7 +29,7 @@
     },
     "SAML_AUDIENCE": {
       "description": "https://boxyhq.com/docs/jackson/deploy/env-variables#saml_audience",
-      "value": "https://saml.boxyhq.com",
+      "value": "SAML_AUDIENCE",
       "required": false
     },
     "DB_ENGINE": {
