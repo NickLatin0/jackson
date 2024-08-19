@@ -82,3 +82,5 @@ $ ls
 and you should see `cache`.
 
 I made one change while debugging xml inside of saml20 to bypass the check for expired token of course. You may have to do this whenever you debug. Look for the error `Assertion is expired.` inside of `lib/response.ts` inside of the saml20 repository.
+
+You can also change the response.js directly. It is located in both node_modules root and npm/node_modules/@boxyhq/saml20/dist/response.ts. Change both and then clear cache.
