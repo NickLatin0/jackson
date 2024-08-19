@@ -8,7 +8,11 @@ export const extractSAMLResponseAttributes = async (
   decodedResponse: string,
   validateOpts: ValidateOption
 ) => {
+  console.log('attributes');
+
   const attributes = await saml.validate(decodedResponse, validateOpts);
+
+  console.log('after attributes');
 
   if (attributes && attributes.claims) {
     // We map claims to our attributes id, email, firstName, lastName where possible. We also map original claims to raw
