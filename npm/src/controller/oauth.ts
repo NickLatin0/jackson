@@ -739,6 +739,8 @@ export class OAuthController implements IOAuthController {
 
       return { redirect_url: redirect.success(redirect_uri, params) };
     } catch (err: unknown) {
+      console.log('error in oauth');
+      console.log(err);
       const error_description = getErrorMessage(err);
       // Trace the error
       const traceId = await this.ssoTracer.saveTrace({
