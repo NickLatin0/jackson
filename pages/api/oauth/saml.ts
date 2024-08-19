@@ -27,6 +27,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
 
     if (redirect_url) {
+      console.log('redirect_url');
+      console.log(redirect_url);
       res.redirect(302, redirect_url);
     }
 
@@ -40,6 +42,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       res.send(response_form);
     }
   } catch (error: any) {
+    console.log('Error attempting to SSO');
+    console.log(error);
+    console.log(error.message);
+    console.log(JSON.stringify(error));
     const { message, statusCode = 500 } = error;
 
     setErrorCookie(res, { message, statusCode }, { path: '/error' });
